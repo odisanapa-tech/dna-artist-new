@@ -21,6 +21,14 @@
     --line:        rgba(255,255,255,0.06);
     --line-strong: rgba(255,255,255,0.12);
 
+    --white-bg:       #FFFFFF;
+    --white-bg-card:  #F5F5F5;
+    --white-text:     #0A0A0A;
+    --white-text-muted: rgba(10,10,10,0.5);
+    --white-text-dim: rgba(10,10,10,0.25);
+    --white-line:     rgba(10,10,10,0.08);
+    --white-line-strong: rgba(10,10,10,0.12);
+
     --font-display: 'Unbounded', sans-serif;
     --font-body:    'Inter', -apple-system, sans-serif;
     --font-mono:    'Space Mono', monospace;
@@ -221,6 +229,87 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
 .section--dark-alt { background: var(--bg-card); }
 .section--no-pt { padding-top: 0; }
 .section--no-pb { padding-bottom: 0; }
+
+.section--white {
+    background: var(--white-bg);
+    color: var(--white-text);
+}
+.section--white .eyebrow { color: var(--pink); }
+.section--white .section__title { color: var(--white-text); }
+.section--white .section__title em { color: var(--pink); }
+.section--white .product-card,
+.section--white .for-item,
+.section--white .program__item,
+.section--white .calendar-item,
+.section--white .service-card,
+.section--white .price-box {
+    background: var(--white-bg-card);
+    border-color: var(--white-line-strong);
+    color: var(--white-text);
+}
+.section--white .product-card:hover,
+.section--white .for-item:hover {
+    border-color: var(--pink-border);
+}
+.section--white .product-card__name,
+.section--white .for-item h4,
+.section--white .program__item h4,
+.section--white .service-card__name,
+.section--white .price-box__amount {
+    color: var(--white-text);
+}
+.section--white .product-card__desc,
+.section--white .for-item p,
+.section--white .program__item p,
+.section--white .service-card__desc,
+.section--white .price-box__features > div {
+    color: var(--white-text-muted);
+}
+.section--white .product-card__img {
+    background: var(--white-line);
+}
+.section--white .price-box__label,
+.section--white .price-box__note {
+    color: var(--white-text-dim);
+}
+.section--white .how {
+    border-color: var(--white-line-strong);
+}
+.section--white .how__step {
+    background: var(--white-bg-card);
+    border-color: var(--white-line-strong);
+}
+.section--white .how__step:hover {
+    background: var(--white-bg);
+}
+.section--white .how__title {
+    color: var(--white-text);
+}
+.section--white .how__text {
+    color: var(--white-text-muted);
+}
+.section--white .wip-note {
+    background: rgba(255,0,128,0.05);
+    border-color: rgba(255,0,128,0.2);
+}
+.section--white.stats {
+    border-color: var(--white-line-strong);
+}
+.section--white .stats__item {
+    border-color: var(--white-line-strong);
+}
+.section--white .stats__label {
+    color: var(--white-text-muted);
+}
+.section--white .product-card__tag {
+    color: var(--white-text-muted);
+}
+.section--white .product-card__link {
+    color: var(--pink);
+}
+.section--white .how__num {
+    color: var(--pink);
+}
 
 .badge {
     display: inline-flex; align-items: center; gap: 8px;
