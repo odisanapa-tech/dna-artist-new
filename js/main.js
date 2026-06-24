@@ -10,33 +10,26 @@ document.addEventListener('DOMContentLoaded', function () {
             target.classList.add('active');
             window.scrollTo(0, 0);
 
-            // re-observe reveals on new page
             target.querySelectorAll('.reveal').forEach(function (el) {
                 el.classList.remove('visible');
                 observer.observe(el);
             });
-
-            // re-init Lucide icons on new page
-            if (window.lucide) { lucide.createIcons(); }
         }
 
-        // show/hide back button
         var backBtn = document.querySelector('.back-btn');
         if (backBtn) {
             backBtn.style.display = id === 'home' ? 'none' : 'inline-flex';
         }
 
-        // close mobile nav if open
         var burger = document.getElementById('burger');
         var mobileNav = document.getElementById('mobileNav');
-        if (mobileNav.classList.contains('open')) {
+        if (mobileNav && mobileNav.classList.contains('open')) {
             burger.classList.remove('active');
             mobileNav.classList.remove('open');
             document.body.style.overflow = '';
         }
     }
 
-    // click handlers for [data-page]
     document.querySelectorAll('[data-page]').forEach(function (el) {
         el.addEventListener('click', function (e) {
             e.preventDefault();
@@ -44,13 +37,34 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // back button
     var backBtn = document.querySelector('.back-btn');
     if (backBtn) {
         backBtn.addEventListener('click', function () {
             showPage('home');
         });
     }
+
+    // ── Smooth scroll for [data-scroll] links ──
+    document.querySelectorAll('[data-scroll]').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+            var href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                var target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    var activePage = document.querySelector('.page.active');
+                    if (activePage && activePage.id !== 'page-home') {
+                        showPage('home');
+                        setTimeout(function () {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                    } else {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            }
+        });
+    });
 
     // ── Scroll reveal ──
     var observer = new IntersectionObserver(function (entries) {
@@ -80,10 +94,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var burger = document.getElementById('burger');
     var mobileNav = document.getElementById('mobileNav');
 
-    burger.addEventListener('click', function () {
-        burger.classList.toggle('active');
-        mobileNav.classList.toggle('open');
-        document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
-    });
+    if (burger && mobileNav) {
+        burger.addEventListener('click', function () {
+            burger.classList.toggle('active');
+            mobileNav.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        });
+    }
 
 });
