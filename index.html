@@ -7,25 +7,25 @@
     <meta name="description" content="Психологическая поддержка для вокалистов и их семей — в самые важные моменты творческого пути.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ══════ HEADER «ресничка» ══════ -->
+<!-- ══════ HEADER «ресничка» + CTA ══════ -->
 <header class="header" id="header">
-    <div class="header__inner">
+    <div class="header__notch">
         <a class="header__logo" data-page="home">ДНК <span>Артиста</span></a>
         <nav class="header__nav">
-            <a data-page="home">Главная</a>
-            <a href="#calendar">Календарь</a>
-            <a href="#products">Программы</a>
-            <a href="#authors">Эксперты</a>
+            <a href="#products" data-scroll>Программы</a>
+            <a href="#calendar" data-scroll>Календарь</a>
+            <a href="#authors" data-scroll>Эксперты</a>
         </nav>
         <button class="header__burger" id="burger" aria-label="Меню">
             <span></span><span></span>
         </button>
     </div>
+    <a href="#" class="header__cta">Записаться</a>
 </header>
 
 <!-- ══════ MOBILE NAV ══════ -->
@@ -46,25 +46,28 @@
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero__overlay"></div>
+        <div class="hero__bg">
+            <img src="assets/img/brain-lightning.jpg" alt="" class="hero__bg-img">
+            <div class="hero__gradient"></div>
+        </div>
         <div class="hero__inner">
-            <div class="badge badge--hero reveal">
+            <div class="badge reveal">
                 <span class="badge__dot"></span>
                 Психология артиста
             </div>
             <h1 class="hero__title reveal">
-                Твой путь на <em>сцену</em><br>начинается здесь
+                Твой путь на<br><em>сцену</em> начинается здесь
             </h1>
             <p class="hero__sub reveal">
-                Психологическая поддержка для вокалистов и их семей —<br>
+                Психологическая поддержка для вокалистов и их семей —
                 в самые важные моменты творческого пути
             </p>
             <div class="hero__actions reveal">
-                <button class="btn btn--gold btn--lg">Я артист</button>
-                <button class="btn btn--glass">Я родитель</button>
+                <button class="btn btn--pink btn--lg" data-page="maria">Я артист</button>
+                <button class="btn btn--glass" data-page="dmitry">Я родитель</button>
             </div>
             <div class="hero__scroll reveal">
-                <i data-lucide="chevron-down"></i>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
             </div>
         </div>
     </section>
@@ -86,81 +89,86 @@
     </section>
 
     <!-- CONSULTATION -->
-    <section class="section section--white">
+    <section class="section">
         <div class="container">
             <div class="consult reveal">
                 <div class="consult__info">
-                    <h2 class="consult__title">Онлайн консультация<br><em>вокального психолога</em></h2>
+                    <span class="eyebrow">Онлайн формат</span>
+                    <h2 class="consult__title">Консультация<br><em>вокального психолога</em></h2>
                     <p class="consult__desc">Получите консультацию вокального или семейного психолога, чтобы уверенно двигаться по творческому пути</p>
                     <div class="consult__meta">
-                        <i data-lucide="clock"></i> 60 мин
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        60 мин
                     </div>
-                    <a href="#" class="btn btn--gold btn--lg">Записаться</a>
+                    <a href="#" class="btn btn--pink">Записаться</a>
                 </div>
                 <div class="consult__visual">
-                    <div class="consult__device">
-                        <div class="consult__screen">
-                            <img src="assets/expert-woman.jpg" alt="Мария Осадчая — онлайн консультация">
-                        </div>
-                    </div>
-                    <div class="consult__decor consult__decor--1"></div>
-                    <div class="consult__decor consult__decor--2"></div>
+                    <img src="assets/img/girl-coffee.jpg" alt="Онлайн консультация">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PRODUCTS -->
-    <section class="section" id="products">
+    <section class="section section--dark-alt" id="products">
         <div class="container">
             <span class="eyebrow reveal">Наши программы</span>
             <h2 class="section__title reveal">Выбери <em>свой</em> путь</h2>
             <div class="products-grid">
                 <div class="product-card reveal" data-page="emotional">
+                    <div class="product-card__img">
+                        <img src="assets/img/girl-heart.jpg" alt="Эмоциональная смелость">
+                    </div>
                     <div class="product-card__body">
-                        <div class="product-card__header">
-                            <span class="product-card__icon"><i data-lucide="heart"></i></span>
-                            <span class="product-card__tag">Мария Осадчая · Онлайн-курс</span>
-                        </div>
+                        <span class="product-card__tag">Мария Осадчая · Онлайн-курс</span>
                         <h3 class="product-card__name">Эмоциональная смелость</h3>
                         <p class="product-card__desc">Выходи на сцену собой, а не персонажем</p>
-                        <span class="product-card__link">Подробнее &rarr;</span>
+                        <span class="product-card__link">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                     </div>
                 </div>
                 <div class="product-card reveal" data-page="navigator">
+                    <div class="product-card__img">
+                        <img src="assets/img/three-emotions.jpg" alt="Конкурсный навигатор">
+                    </div>
                     <div class="product-card__body">
-                        <div class="product-card__header">
-                            <span class="product-card__icon"><i data-lucide="trophy"></i></span>
-                            <span class="product-card__tag">Мария Осадчая · Telegram-трек</span>
-                        </div>
+                        <span class="product-card__tag">Мария Осадчая · Telegram-трек</span>
                         <h3 class="product-card__name">Конкурсный навигатор</h3>
                         <p class="product-card__desc">30 дней — для артиста и родителя параллельно</p>
-                        <span class="product-card__link">Подробнее &rarr;</span>
+                        <span class="product-card__link">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                     </div>
                 </div>
                 <div class="product-card reveal" data-page="9of10">
+                    <div class="product-card__img">
+                        <img src="assets/img/duo-singers.jpg" alt="9 из 10">
+                    </div>
                     <div class="product-card__body">
-                        <div class="product-card__header">
-                            <span class="product-card__icon"><i data-lucide="bar-chart-3"></i></span>
-                            <span class="product-card__tag">Дмитрий Осадчий · Мастерская</span>
-                        </div>
+                        <span class="product-card__tag">Дмитрий Осадчий · Мастерская</span>
                         <h3 class="product-card__name">9 из 10</h3>
                         <p class="product-card__desc">Мастерская перфекционизма для артиста</p>
-                        <span class="product-card__link">Подробнее &rarr;</span>
+                        <span class="product-card__link">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                     </div>
                 </div>
                 <div class="product-card reveal" data-page="kod">
+                    <div class="product-card__img">
+                        <img src="assets/img/guitarist.jpg" alt="Код артиста">
+                    </div>
                     <div class="product-card__body">
-                        <div class="product-card__header">
-                            <span class="product-card__icon"><i data-lucide="dna"></i></span>
-                            <span class="product-card__tag">Дмитрий Осадчий · Мастерская</span>
-                        </div>
+                        <span class="product-card__tag">Дмитрий Осадчий · Мастерская</span>
                         <h3 class="product-card__name">Код артиста</h3>
                         <p class="product-card__desc">Четыре метанавыка, которые отличают профессионала</p>
-                        <span class="product-card__link">Подробнее &rarr;</span>
+                        <span class="product-card__link">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- BANNER IMAGE -->
+    <section class="banner-img">
+        <img src="assets/img/girl-vinyl.jpg" alt="" class="banner-img__src">
+        <div class="banner-img__overlay"></div>
+        <div class="banner-img__text reveal">
+            <span>Музыка живёт в тебе</span>
         </div>
     </section>
 
@@ -170,11 +178,10 @@
             <span class="eyebrow reveal">Ближайшие события</span>
             <h2 class="section__title reveal">Календарь <em>запусков</em></h2>
 
-            <!-- Featured event -->
             <div class="featured-event reveal">
                 <div class="featured-event__inner">
                     <div class="featured-event__info">
-                        <div class="badge badge--light">
+                        <div class="badge badge--sm">
                             <span class="badge__dot"></span>
                             Скоро
                         </div>
@@ -188,22 +195,18 @@
                         <h3 class="featured-event__title">Агутин Форум</h3>
                         <p class="featured-event__location">Красная Поляна</p>
                         <p class="featured-event__desc">Живые встречи с Марией и Дмитрием. Масштабное творческое событие, где музыка, голос и сценическое мастерство сплетаются в уникальный опыт.</p>
-                        <a href="#" class="btn btn--gold btn--lg">Забронировать место &rarr;</a>
+                        <a href="#" class="btn btn--pink">Забронировать место</a>
                     </div>
                     <div class="featured-event__visual">
-                        <div class="featured-event__dna">
-                            <span></span><span></span><span></span>
-                            <span></span><span></span><span></span>
-                        </div>
+                        <img src="assets/img/singer-lightning.jpg" alt="Агутин Форум">
                     </div>
                 </div>
             </div>
 
-            <!-- Other events -->
             <div class="calendar-list">
                 <div class="calendar-item reveal">
                     <span class="calendar-item__date">Август</span>
-                    <span class="calendar-item__dot" style="background:rgba(26,16,64,0.2);"></span>
+                    <span class="calendar-item__dot"></span>
                     <div class="calendar-item__info">
                         <span class="calendar-item__name">Эмоциональная смелость · Поток 2</span>
                         <span class="calendar-item__sub">Онлайн-курс Марии Осадчей</span>
@@ -212,7 +215,7 @@
                 </div>
                 <div class="calendar-item reveal">
                     <span class="calendar-item__date">Сентябрь</span>
-                    <span class="calendar-item__dot" style="background:rgba(26,16,64,0.2);"></span>
+                    <span class="calendar-item__dot"></span>
                     <div class="calendar-item__info">
                         <span class="calendar-item__name">Конкурсный навигатор · Поток 1</span>
                         <span class="calendar-item__sub">30-дневный Telegram-трек</span>
@@ -231,25 +234,21 @@
             <div class="how">
                 <div class="how__step reveal">
                     <span class="how__num">01</span>
-                    <span class="how__icon"><i data-lucide="map-pin"></i></span>
                     <h3 class="how__title">Находишь свою точку</h3>
                     <p class="how__text">Конкурс, новый уровень, поворотный момент — у каждой ситуации свой инструмент</p>
                 </div>
                 <div class="how__step reveal">
                     <span class="how__num">02</span>
-                    <span class="how__icon"><i data-lucide="target"></i></span>
                     <h3 class="how__title">Входишь в программу</h3>
                     <p class="how__text">Онлайн, в своём темпе, с живыми встречами авторов</p>
                 </div>
                 <div class="how__step reveal">
                     <span class="how__num">03</span>
-                    <span class="how__icon"><i data-lucide="unlock"></i></span>
                     <h3 class="how__title">Двигаешься вперёд</h3>
                     <p class="how__text">С психологическим инструментом, а не вслепую</p>
                 </div>
                 <div class="how__step reveal">
                     <span class="how__num">04</span>
-                    <span class="how__icon"><i data-lucide="rocket"></i></span>
                     <h3 class="how__title">Выходишь сильнее</h3>
                     <p class="how__text">Новый уровень понимания себя и своего пути</p>
                 </div>
@@ -258,60 +257,60 @@
     </section>
 
     <!-- AUTHORS -->
-    <section class="section section--no-pt" id="authors">
+    <section class="section" id="authors">
         <div class="container">
             <span class="eyebrow reveal">Авторы</span>
             <h2 class="section__title reveal">Мария и <em>Дмитрий</em></h2>
             <div class="authors-grid">
                 <div class="author-card author-card--lead reveal" data-page="maria">
-                    <span class="author-card__label">Хедлайнер проекта</span>
-                    <div class="author-card__top">
-                        <div class="author-card__avatar">
-                            <img src="assets/expert-woman.jpg" alt="Мария Осадчая">
-                        </div>
-                        <div>
-                            <h3 class="author-card__name">Мария Осадчая</h3>
-                            <p class="author-card__role">Вокальный психолог<br>Голос, тело, эмоциональное состояние</p>
-                        </div>
+                    <div class="author-card__img">
+                        <img src="assets/img/woman-power.jpg" alt="Мария Осадчая">
                     </div>
-                    <div class="author-card__tags">
-                        <span>Вокальная психология</span>
-                        <span>Сцена и тело</span>
-                        <span>Эмоциональная смелость</span>
+                    <div class="author-card__content">
+                        <span class="author-card__label">Хедлайнер проекта</span>
+                        <h3 class="author-card__name">Мария Осадчая</h3>
+                        <p class="author-card__role">Вокальный психолог<br>Голос, тело, эмоциональное состояние</p>
+                        <div class="author-card__tags">
+                            <span>Вокальная психология</span>
+                            <span>Сцена и тело</span>
+                            <span>Эмоциональная смелость</span>
+                        </div>
+                        <span class="author-card__link">Перейти на страницу Марии <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                     </div>
-                    <span class="author-card__link">Перейти на страницу Марии &rarr;</span>
                 </div>
                 <div class="author-card reveal" data-page="dmitry">
-                    <div class="author-card__top">
-                        <div class="author-card__avatar">
-                            <img src="assets/expert-man.jpg" alt="Дмитрий Осадчий">
-                        </div>
-                        <div>
-                            <h3 class="author-card__name">Дмитрий Осадчий</h3>
-                            <p class="author-card__role">Практикующий психолог<br>Профессиональное развитие и ресурсное состояние</p>
-                        </div>
+                    <div class="author-card__img">
+                        <img src="assets/img/three-women-black.jpg" alt="Дмитрий Осадчий">
                     </div>
-                    <div class="author-card__tags">
-                        <span>Путь артиста</span>
-                        <span>Семейная динамика</span>
-                        <span>Ресурсное состояние</span>
+                    <div class="author-card__content">
+                        <h3 class="author-card__name">Дмитрий Осадчий</h3>
+                        <p class="author-card__role">Практикующий психолог<br>Профессиональное развитие и ресурсное состояние</p>
+                        <div class="author-card__tags">
+                            <span>Путь артиста</span>
+                            <span>Семейная динамика</span>
+                            <span>Ресурсное состояние</span>
+                        </div>
+                        <span class="author-card__link">Перейти на страницу Дмитрия <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                     </div>
-                    <span class="author-card__link">Перейти на страницу Дмитрия &rarr;</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <div class="container">
-        <div class="cta reveal">
-            <div>
-                <h2 class="cta__title">Готов сделать<br>следующий шаг?</h2>
-                <p class="cta__sub">Вступай в сообщество ВКонтакте — там всё начинается</p>
+    <section class="section section--no-pb">
+        <div class="container">
+            <div class="cta reveal">
+                <img src="assets/img/girl-sitting.jpg" alt="" class="cta__bg">
+                <div class="cta__overlay"></div>
+                <div class="cta__content">
+                    <h2 class="cta__title">Готов сделать<br>следующий шаг?</h2>
+                    <p class="cta__sub">Вступай в сообщество ВКонтакте — там всё начинается</p>
+                    <a href="#" class="btn btn--pink btn--lg">Вступить в сообщество ВК</a>
+                </div>
             </div>
-            <a href="#" class="btn btn--gold btn--lg">Вступить в сообщество ВК</a>
         </div>
-    </div>
+    </section>
 </main>
 
 <!-- ════════════════════════════════════════════
@@ -320,10 +319,10 @@
 <main class="page" id="page-maria">
     <section class="spec-hero">
         <div class="container">
-            <span class="eyebrow eyebrow--light reveal">Вокальный психолог</span>
+            <span class="eyebrow reveal">Вокальный психолог</span>
             <div class="spec-hero__grid">
                 <div class="spec-hero__avatar reveal">
-                    <img src="assets/expert-woman.jpg" alt="Мария Осадчая">
+                    <img src="assets/img/woman-power.jpg" alt="Мария Осадчая">
                 </div>
                 <div>
                     <h1 class="spec-hero__name reveal">Мария Осадчая</h1>
@@ -334,37 +333,7 @@
                         <span>Конкурсное сопровождение</span>
                         <span>Эмоциональная смелость</span>
                     </div>
-                    <a href="#" class="btn btn--gold reveal">Записаться к Марии</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--white">
-        <div class="container">
-            <span class="eyebrow reveal">Форматы работы</span>
-            <h2 class="section__title reveal">Как работает <em>Мария</em></h2>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <span class="service-card__icon"><i data-lucide="target"></i></span>
-                    <h3 class="service-card__name">Разовая консультация</h3>
-                    <p class="service-card__desc">Конкретный запрос — конкретный ответ. Один раз, онлайн.</p>
-                    <div class="wip-note">Цена уточняется</div>
-                    <button class="btn btn--gold btn--full">Записаться</button>
-                </div>
-                <div class="service-card reveal">
-                    <span class="service-card__icon"><i data-lucide="package"></i></span>
-                    <h3 class="service-card__name">Пакет встреч</h3>
-                    <p class="service-card__desc">Серия сессий для глубокой работы с голосом и состоянием.</p>
-                    <div class="wip-note">Цена уточняется</div>
-                    <button class="btn btn--gold btn--full">Записаться</button>
-                </div>
-                <div class="service-card service-card--featured reveal">
-                    <span class="service-card__icon"><i data-lucide="crown"></i></span>
-                    <h3 class="service-card__name">Конкурсное сопровождение</h3>
-                    <p class="service-card__desc">VIP-формат. Мария рядом на всём пути — от подготовки до результата.</p>
-                    <div class="wip-note">Цена уточняется</div>
-                    <button class="btn btn--gold btn--full">Записаться</button>
+                    <a href="#" class="btn btn--pink reveal">Записаться к Марии</a>
                 </div>
             </div>
         </div>
@@ -372,29 +341,56 @@
 
     <section class="section">
         <div class="container">
+            <span class="eyebrow reveal">Форматы работы</span>
+            <h2 class="section__title reveal">Как работает <em>Мария</em></h2>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <h3 class="service-card__name">Разовая консультация</h3>
+                    <p class="service-card__desc">Конкретный запрос — конкретный ответ. Один раз, онлайн.</p>
+                    <div class="wip-note">Цена уточняется</div>
+                    <button class="btn btn--pink btn--full">Записаться</button>
+                </div>
+                <div class="service-card reveal">
+                    <h3 class="service-card__name">Пакет встреч</h3>
+                    <p class="service-card__desc">Серия сессий для глубокой работы с голосом и состоянием.</p>
+                    <div class="wip-note">Цена уточняется</div>
+                    <button class="btn btn--pink btn--full">Записаться</button>
+                </div>
+                <div class="service-card service-card--featured reveal">
+                    <h3 class="service-card__name">Конкурсное сопровождение</h3>
+                    <p class="service-card__desc">VIP-формат. Мария рядом на всём пути — от подготовки до результата.</p>
+                    <div class="wip-note">Цена уточняется</div>
+                    <button class="btn btn--pink btn--full">Записаться</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--no-pt">
+        <div class="container">
             <span class="eyebrow reveal">Продукты Марии</span>
             <h2 class="section__title reveal">Курсы и <em>программы</em></h2>
-            <div class="products-grid">
+            <div class="products-grid products-grid--2">
                 <div class="product-card reveal" data-page="emotional">
+                    <div class="product-card__img">
+                        <img src="assets/img/girl-heart.jpg" alt="Эмоциональная смелость">
+                    </div>
                     <div class="product-card__body">
-                        <div class="product-card__header">
-                            <span class="product-card__icon"><i data-lucide="heart"></i></span>
-                            <span class="product-card__tag">Онлайн-курс</span>
-                        </div>
+                        <span class="product-card__tag">Онлайн-курс</span>
                         <h3 class="product-card__name">Эмоциональная смелость</h3>
                         <p class="product-card__desc">3 живые сессии + рабочая тетрадь + клуб</p>
-                        <span class="product-card__link">Подробнее &rarr;</span>
+                        <span class="product-card__link">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                     </div>
                 </div>
                 <div class="product-card reveal" data-page="navigator">
+                    <div class="product-card__img">
+                        <img src="assets/img/three-emotions.jpg" alt="Конкурсный навигатор">
+                    </div>
                     <div class="product-card__body">
-                        <div class="product-card__header">
-                            <span class="product-card__icon"><i data-lucide="trophy"></i></span>
-                            <span class="product-card__tag">Telegram-трек · 30 дней</span>
-                        </div>
+                        <span class="product-card__tag">Telegram-трек · 30 дней</span>
                         <h3 class="product-card__name">Конкурсный навигатор</h3>
                         <p class="product-card__desc">Параллельно для артиста и родителя</p>
-                        <span class="product-card__link">Подробнее &rarr;</span>
+                        <span class="product-card__link">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                     </div>
                 </div>
             </div>
@@ -408,10 +404,10 @@
 <main class="page" id="page-dmitry">
     <section class="spec-hero">
         <div class="container">
-            <span class="eyebrow eyebrow--light reveal">Практикующий психолог</span>
+            <span class="eyebrow reveal">Практикующий психолог</span>
             <div class="spec-hero__grid">
                 <div class="spec-hero__avatar reveal">
-                    <img src="assets/expert-man.jpg" alt="Дмитрий Осадчий">
+                    <img src="assets/img/woman-sunglasses.jpg" alt="Дмитрий Осадчий">
                 </div>
                 <div>
                     <h1 class="spec-hero__name reveal">Дмитрий Осадчий</h1>
@@ -422,37 +418,7 @@
                         <span>Ресурсное состояние</span>
                         <span>Карьерные повороты</span>
                     </div>
-                    <a href="#" class="btn btn--gold reveal">Записаться к Дмитрию</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--white">
-        <div class="container">
-            <span class="eyebrow reveal">Форматы работы</span>
-            <h2 class="section__title reveal">Как работает <em>Дмитрий</em></h2>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <span class="service-card__icon"><i data-lucide="message-circle"></i></span>
-                    <h3 class="service-card__name">Разовая консультация</h3>
-                    <p class="service-card__desc">Психологическое консультирование по конкретному запросу. Онлайн.</p>
-                    <div class="wip-note">Цена уточняется</div>
-                    <button class="btn btn--gold btn--full">Записаться</button>
-                </div>
-                <div class="service-card reveal">
-                    <span class="service-card__icon"><i data-lucide="repeat"></i></span>
-                    <h3 class="service-card__name">Пакет встреч</h3>
-                    <p class="service-card__desc">Краткосрочная психологическая коррекция. Серия сессий, работа с паттерном.</p>
-                    <div class="wip-note">Цена уточняется</div>
-                    <button class="btn btn--gold btn--full">Записаться</button>
-                </div>
-                <div class="service-card reveal">
-                    <span class="service-card__icon"><i data-lucide="map"></i></span>
-                    <h3 class="service-card__name">Проектная работа</h3>
-                    <p class="service-card__desc">Консультирование по выбору профессиональной траектории. Несколько встреч, конкретный результат — личный план.</p>
-                    <div class="wip-note">Цена уточняется</div>
-                    <button class="btn btn--gold btn--full">Записаться</button>
+                    <a href="#" class="btn btn--pink reveal">Записаться к Дмитрию</a>
                 </div>
             </div>
         </div>
@@ -460,29 +426,56 @@
 
     <section class="section">
         <div class="container">
+            <span class="eyebrow reveal">Форматы работы</span>
+            <h2 class="section__title reveal">Как работает <em>Дмитрий</em></h2>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <h3 class="service-card__name">Разовая консультация</h3>
+                    <p class="service-card__desc">Психологическое консультирование по конкретному запросу. Онлайн.</p>
+                    <div class="wip-note">Цена уточняется</div>
+                    <button class="btn btn--pink btn--full">Записаться</button>
+                </div>
+                <div class="service-card reveal">
+                    <h3 class="service-card__name">Пакет встреч</h3>
+                    <p class="service-card__desc">Краткосрочная психологическая коррекция. Серия сессий, работа с паттерном.</p>
+                    <div class="wip-note">Цена уточняется</div>
+                    <button class="btn btn--pink btn--full">Записаться</button>
+                </div>
+                <div class="service-card reveal">
+                    <h3 class="service-card__name">Проектная работа</h3>
+                    <p class="service-card__desc">Консультирование по выбору профессиональной траектории.</p>
+                    <div class="wip-note">Цена уточняется</div>
+                    <button class="btn btn--pink btn--full">Записаться</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--no-pt">
+        <div class="container">
             <span class="eyebrow reveal">Продукты Дмитрия</span>
             <h2 class="section__title reveal">Курсы и <em>мастерские</em></h2>
-            <div class="products-grid">
+            <div class="products-grid products-grid--2">
                 <div class="product-card reveal" data-page="9of10">
+                    <div class="product-card__img">
+                        <img src="assets/img/duo-singers.jpg" alt="9 из 10">
+                    </div>
                     <div class="product-card__body">
-                        <div class="product-card__header">
-                            <span class="product-card__icon"><i data-lucide="bar-chart-3"></i></span>
-                            <span class="product-card__tag">Мастерская перфекционизма</span>
-                        </div>
+                        <span class="product-card__tag">Мастерская перфекционизма</span>
                         <h3 class="product-card__name">9 из 10</h3>
                         <p class="product-card__desc">8 недель работы с перфекционизмом артиста</p>
-                        <span class="product-card__link">Подробнее &rarr;</span>
+                        <span class="product-card__link">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                     </div>
                 </div>
                 <div class="product-card reveal" data-page="kod">
+                    <div class="product-card__img">
+                        <img src="assets/img/guitarist.jpg" alt="Код артиста">
+                    </div>
                     <div class="product-card__body">
-                        <div class="product-card__header">
-                            <span class="product-card__icon"><i data-lucide="dna"></i></span>
-                            <span class="product-card__tag">Мастерская метанавыков</span>
-                        </div>
+                        <span class="product-card__tag">Мастерская метанавыков</span>
                         <h3 class="product-card__name">Код артиста</h3>
                         <p class="product-card__desc">Четыре навыка, которые не даст ни один педагог</p>
-                        <span class="product-card__link">Подробнее &rarr;</span>
+                        <span class="product-card__link">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                     </div>
                 </div>
             </div>
@@ -496,7 +489,7 @@
 <main class="page" id="page-emotional">
     <section class="prod-hero">
         <div class="container">
-            <div class="badge badge--light reveal">Онлайн-курс · Мария Осадчая</div>
+            <div class="badge reveal">Онлайн-курс · Мария Осадчая</div>
             <div class="prod-hero__grid">
                 <div>
                     <h1 class="prod-hero__title reveal">Эмоциональная <em>смелость</em></h1>
@@ -506,40 +499,29 @@
                         <span>Рабочая тетрадь</span>
                         <span>Клуб участников</span>
                     </div>
-                    <a href="#" class="btn btn--gold reveal">Записаться на курс</a>
-                    <div class="prod-hero__author reveal">
-                        <div class="prod-hero__author-ava">
-                            <img src="assets/expert-woman.jpg" alt="Мария Осадчая">
-                        </div>
-                        <div>
-                            <span class="prod-hero__author-name">Мария Осадчая</span>
-                            <span class="prod-hero__author-role">Вокальный психолог · Автор курса</span>
-                        </div>
-                    </div>
+                    <a href="#" class="btn btn--pink reveal">Записаться на курс</a>
                 </div>
                 <div class="prod-hero__visual reveal">
-                    <span class="prod-hero__visual-icon"><i data-lucide="heart"></i></span>
-                    <span class="prod-hero__visual-title">Ты на сцене</span>
-                    <span class="prod-hero__visual-sub">Не роль. Не образ. Ты — настоящий.</span>
+                    <img src="assets/img/girl-heart.jpg" alt="Эмоциональная смелость">
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--white">
-        <div class="container">
-            <span class="eyebrow reveal">Для кого</span>
-            <h2 class="section__title reveal">Узнаёшь <em>себя?</em></h2>
-            <div class="for-grid">
-                <div class="for-item reveal"><span class="for-item__icon"><i data-lucide="mic"></i></span><div><h4>Голос есть, но что-то блокирует</h4><p>Технически всё готово, а на сцене — как будто не ты</p></div></div>
-                <div class="for-item reveal"><span class="for-item__icon"><i data-lucide="eye-off"></i></span><div><h4>Теряешься перед аудиторией</h4><p>Знаешь материал, но выходишь — и всё куда-то уходит</p></div></div>
-                <div class="for-item reveal"><span class="for-item__icon"><i data-lucide="repeat"></i></span><div><h4>Играешь «правильно», а не живо</h4><p>Исполнение аккуратное, но без настоящей эмоции</p></div></div>
-                <div class="for-item reveal"><span class="for-item__icon"><i data-lucide="message-circle"></i></span><div><h4>Боишься быть собой на сцене</h4><p>Страшно, что осудят, не примут, скажут «слишком много»</p></div></div>
             </div>
         </div>
     </section>
 
     <section class="section">
+        <div class="container">
+            <span class="eyebrow reveal">Для кого</span>
+            <h2 class="section__title reveal">Узнаёшь <em>себя?</em></h2>
+            <div class="for-grid">
+                <div class="for-item reveal"><div><h4>Голос есть, но что-то блокирует</h4><p>Технически всё готово, а на сцене — как будто не ты</p></div></div>
+                <div class="for-item reveal"><div><h4>Теряешься перед аудиторией</h4><p>Знаешь материал, но выходишь — и всё куда-то уходит</p></div></div>
+                <div class="for-item reveal"><div><h4>Играешь «правильно», а не живо</h4><p>Исполнение аккуратное, но без настоящей эмоции</p></div></div>
+                <div class="for-item reveal"><div><h4>Боишься быть собой на сцене</h4><p>Страшно, что осудят, не примут, скажут «слишком много»</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--no-pt">
         <div class="container">
             <span class="eyebrow reveal">Программа</span>
             <h2 class="section__title reveal">Три сессии — три <em>шага</em></h2>
@@ -561,7 +543,7 @@
                     <span class="price-box__label">ЦЕНА КУРСА</span>
                     <span class="price-box__amount">уточняется</span>
                     <p class="price-box__note">Цена будет уточнена — следи за анонсом</p>
-                    <button class="btn btn--gold">Записаться</button>
+                    <button class="btn btn--pink">Записаться</button>
                 </div>
                 <div class="price-box__features">
                     <div><span class="check">&#10003;</span> 3 живые сессии с Марией онлайн</div>
@@ -581,7 +563,7 @@
 <main class="page" id="page-navigator">
     <section class="prod-hero">
         <div class="container">
-            <div class="badge badge--light reveal">Telegram-трек · 30 дней · Мария Осадчая</div>
+            <div class="badge reveal">Telegram-трек · 30 дней · Мария Осадчая</div>
             <div class="prod-hero__grid">
                 <div>
                     <h1 class="prod-hero__title reveal">Конкурсный <em>навигатор</em></h1>
@@ -591,17 +573,15 @@
                         <span>Поток для родителя</span>
                         <span>Telegram</span>
                     </div>
-                    <a href="#" class="btn btn--gold reveal">Записаться</a>
+                    <a href="#" class="btn btn--pink reveal">Записаться</a>
                 </div>
                 <div class="prod-hero__visual reveal">
-                    <span class="prod-hero__visual-icon"><i data-lucide="trophy"></i></span>
-                    <span class="prod-hero__visual-title">30 дней вместе</span>
-                    <span class="prod-hero__visual-sub">Артист и родитель — каждый своим путём к одной цели</span>
+                    <img src="assets/img/three-emotions.jpg" alt="Конкурсный навигатор">
                 </div>
             </div>
         </div>
     </section>
-    <section class="section section--white">
+    <section class="section">
         <div class="container">
             <div class="wip-block reveal">
                 <h3>В разработке</h3>
@@ -617,7 +597,7 @@
 <main class="page" id="page-9of10">
     <section class="prod-hero">
         <div class="container">
-            <div class="badge badge--light reveal">Мастерская · Дмитрий Осадчий</div>
+            <div class="badge reveal">Мастерская · Дмитрий Осадчий</div>
             <div class="prod-hero__grid">
                 <div>
                     <h1 class="prod-hero__title reveal">9 из <em>10</em></h1>
@@ -628,38 +608,29 @@
                         <span>КПТ-практики</span>
                         <span>Диагностика</span>
                     </div>
-                    <a href="#" class="btn btn--gold reveal">Записаться</a>
-                    <div class="prod-hero__author reveal">
-                        <div class="prod-hero__author-ava"><img src="assets/expert-man.jpg" alt="Дмитрий Осадчий"></div>
-                        <div>
-                            <span class="prod-hero__author-name">Дмитрий Осадчий</span>
-                            <span class="prod-hero__author-role">Практикующий психолог · Автор мастерской</span>
-                        </div>
-                    </div>
+                    <a href="#" class="btn btn--pink reveal">Записаться</a>
                 </div>
                 <div class="prod-hero__visual reveal">
-                    <span class="prod-hero__visual-icon"><i data-lucide="bar-chart-3"></i></span>
-                    <span class="prod-hero__visual-title">Перфекционизм — не враг</span>
-                    <span class="prod-hero__visual-sub">Он может стать твоим главным инструментом</span>
+                    <img src="assets/img/duo-singers.jpg" alt="9 из 10">
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--white">
-        <div class="container">
-            <span class="eyebrow reveal">Для кого</span>
-            <h2 class="section__title reveal">Узнаёшь <em>себя?</em></h2>
-            <div class="for-grid">
-                <div class="for-item reveal"><span class="for-item__icon"><i data-lucide="alert-circle"></i></span><div><h4>Боишься выйти не идеально</h4><p>Лучше не выходить вовсе, чем выйти и ошибиться</p></div></div>
-                <div class="for-item reveal"><span class="for-item__icon"><i data-lucide="refresh-cw"></i></span><div><h4>Репетируешь до изнеможения</h4><p>Ещё раз, ещё раз — и всё равно недостаточно хорошо</p></div></div>
-                <div class="for-item reveal"><span class="for-item__icon"><i data-lucide="trending-down"></i></span><div><h4>Одна ошибка рушит всё выступление</h4><p>Не можешь отпустить и двигаться дальше</p></div></div>
-                <div class="for-item reveal"><span class="for-item__icon"><i data-lucide="ban"></i></span><div><h4>Критикуешь себя жёстче любого судьи</h4><p>Внутренний голос убивает желание петь</p></div></div>
             </div>
         </div>
     </section>
 
     <section class="section">
+        <div class="container">
+            <span class="eyebrow reveal">Для кого</span>
+            <h2 class="section__title reveal">Узнаёшь <em>себя?</em></h2>
+            <div class="for-grid">
+                <div class="for-item reveal"><div><h4>Боишься выйти не идеально</h4><p>Лучше не выходить вовсе, чем выйти и ошибиться</p></div></div>
+                <div class="for-item reveal"><div><h4>Репетируешь до изнеможения</h4><p>Ещё раз, ещё раз — и всё равно недостаточно хорошо</p></div></div>
+                <div class="for-item reveal"><div><h4>Одна ошибка рушит всё выступление</h4><p>Не можешь отпустить и двигаться дальше</p></div></div>
+                <div class="for-item reveal"><div><h4>Критикуешь себя жёстче любого судьи</h4><p>Внутренний голос убивает желание петь</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--no-pt">
         <div class="container">
             <span class="eyebrow reveal">Программа</span>
             <h2 class="section__title reveal">8 недель — 8 <em>шагов</em></h2>
@@ -681,7 +652,7 @@
                     <span class="price-box__label">ЦЕНА МАСТЕРСКОЙ</span>
                     <span class="price-box__amount">уточняется</span>
                     <p class="price-box__note">Цена будет уточнена — следи за анонсом</p>
-                    <button class="btn btn--gold">Записаться</button>
+                    <button class="btn btn--pink">Записаться</button>
                 </div>
                 <div class="price-box__features">
                     <div><span class="check">&#10003;</span> 8 недель работы</div>
@@ -701,7 +672,7 @@
 <main class="page" id="page-kod">
     <section class="prod-hero">
         <div class="container">
-            <div class="badge badge--light reveal">Мастерская · Дмитрий Осадчий</div>
+            <div class="badge reveal">Мастерская · Дмитрий Осадчий</div>
             <div class="prod-hero__grid">
                 <div>
                     <h1 class="prod-hero__title reveal">Код <em>артиста</em></h1>
@@ -712,31 +683,29 @@
                         <span>Самоопределение</span>
                         <span>Интеграция</span>
                     </div>
-                    <a href="#" class="btn btn--gold reveal">Записаться</a>
+                    <a href="#" class="btn btn--pink reveal">Записаться</a>
                 </div>
                 <div class="prod-hero__visual reveal">
-                    <span class="prod-hero__visual-icon"><i data-lucide="dna"></i></span>
-                    <span class="prod-hero__visual-title">Твой профессиональный код</span>
-                    <span class="prod-hero__visual-sub">4 уровня — от тела до идентичности</span>
+                    <img src="assets/img/guitarist.jpg" alt="Код артиста">
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--white">
-        <div class="container">
-            <span class="eyebrow reveal">Четыре уровня</span>
-            <h2 class="section__title reveal">Из чего состоит <em>профессионал</em></h2>
-            <div class="for-grid">
-                <div class="for-item reveal"><span class="for-item__icon"><i data-lucide="heart-pulse"></i></span><div><h4>Соматика</h4><p>Тело как инструмент. Как состояние тела влияет на исполнение и карьеру.</p></div></div>
-                <div class="for-item reveal"><span class="for-item__icon"><i data-lucide="search"></i></span><div><h4>Дифференциация</h4><p>Отделять своё от чужого. Критику от обратной связи. Страх от интуиции.</p></div></div>
-                <div class="for-item reveal"><span class="for-item__icon"><i data-lucide="compass"></i></span><div><h4>Самоопределение</h4><p>Кто я как артист. Мои ценности, стиль, путь — не навязанный, а настоящий.</p></div></div>
-                <div class="for-item reveal"><span class="for-item__icon"><i data-lucide="link"></i></span><div><h4>Интеграция</h4><p>Соединить всё в одно. Стать целостным — на сцене и за её пределами.</p></div></div>
             </div>
         </div>
     </section>
 
     <section class="section">
+        <div class="container">
+            <span class="eyebrow reveal">Четыре уровня</span>
+            <h2 class="section__title reveal">Из чего состоит <em>профессионал</em></h2>
+            <div class="for-grid">
+                <div class="for-item reveal"><div><h4>Соматика</h4><p>Тело как инструмент. Как состояние тела влияет на исполнение и карьеру.</p></div></div>
+                <div class="for-item reveal"><div><h4>Дифференциация</h4><p>Отделять своё от чужого. Критику от обратной связи. Страх от интуиции.</p></div></div>
+                <div class="for-item reveal"><div><h4>Самоопределение</h4><p>Кто я как артист. Мои ценности, стиль, путь — не навязанный, а настоящий.</p></div></div>
+                <div class="for-item reveal"><div><h4>Интеграция</h4><p>Соединить всё в одно. Стать целостным — на сцене и за её пределами.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--no-pt">
         <div class="container">
             <div class="wip-block reveal">
                 <h3>Программа уточняется</h3>
@@ -746,19 +715,44 @@
     </section>
 </main>
 
-<!-- ══════ FOOTER (shared) ══════ -->
+<!-- ══════ FOOTER (MAYDA style) ══════ -->
 <footer class="footer" id="footer">
-    <div class="container">
-        <div class="footer__inner">
-            <span class="footer__logo">ДНК <span>Артиста</span></span>
-            <button class="btn btn--outline btn--sm back-btn" style="display:none;">&#8592; На главную</button>
-            <span class="footer__copy">&copy; 2026 ДНК Артиста</span>
+    <div class="footer__top">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <span class="footer__label">Будь в курсе новостей</span>
+                    <div class="footer__email">
+                        <input type="email" placeholder="Email" class="footer__input">
+                        <button class="footer__email-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <a href="#" class="footer__social">Telegram <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+                    <a href="#" class="footer__social">ВКонтакте <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+                    <a href="#" class="footer__social">Instagram <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+                </div>
+                <div class="footer__col">
+                    <span class="footer__copy">&copy; 2026<br>ДНК Артиста</span>
+                </div>
+                <div class="footer__col footer__col--right">
+                    <a href="#" class="footer__link">Политика конфиденциальности <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+                    <a href="#" class="footer__link">Оферта <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="container">
+            <span class="footer__big-text">ДНК АРТИСТА</span>
+            <button class="back-btn" style="display:none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                На главную
+            </button>
         </div>
     </div>
 </footer>
 
 <script src="js/main.js"></script>
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-<script>lucide.createIcons();</script>
 </body>
 </html>
