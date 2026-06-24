@@ -668,10 +668,12 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     min-height: 360px;
     display: flex; align-items: center;
     margin-bottom: 80px;
+    background: var(--bg-card);
 }
 .cta__bg {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%; object-fit: cover;
+    position: absolute; top: 0; right: 0; bottom: 0;
+    width: 60%; height: 100%; object-fit: contain;
+    object-position: right center;
 }
 .cta__overlay {
     position: absolute; inset: 0;
@@ -984,6 +986,7 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     .price-box { grid-template-columns: 1fr; }
 
     .cta { min-height: 280px; }
+    .cta__bg { width: 50%; opacity: 0.3; }
     .cta__content { padding: 32px 24px; }
 
     .banner-img { height: 240px; }
