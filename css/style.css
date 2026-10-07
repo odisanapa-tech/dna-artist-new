@@ -217,12 +217,12 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     color: var(--pink); letter-spacing: 0.12em;
     text-transform: uppercase; margin-bottom: 14px;
 }
-/* надзаголовок, работающий как заголовок секции — там, где h2 нет */
 .eyebrow--lg {
     font-size: 16px; font-weight: 700;
     letter-spacing: 0.14em;
-    margin-bottom: 36px;
 }
+/* там, где крупный надзаголовок стоит вместо h2, он берёт на себя его отступ */
+.eyebrow--lg + .services-grid { margin-top: 22px; }
 
 .section__title {
     font-weight: 900; font-size: clamp(26px, 4vw, 36px);
