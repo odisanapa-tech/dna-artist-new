@@ -455,6 +455,11 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     font-size: 16px; line-height: 1.75;
     color: rgba(255,255,255,0.78);
 }
+.approach p.approach__lead {
+    font-size: 18px;
+    color: var(--text);
+    font-weight: 500;
+}
 .approach__quote {
     position: relative;
     max-width: 760px;
