@@ -804,6 +804,10 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     line-height: 1.6; margin-bottom: 18px;
 }
 .service-card__specs { margin-bottom: 18px; }
+/* последний блок текста растягивается, поэтому цена и кнопка
+   прижаты к низу и стоят на одной линии во всех карточках ряда */
+.service-card__desc:last-of-type,
+.service-card__specs { flex: 1; }
 .service-card__specs dt {
     font-family: var(--font-mono); font-size: 10px;
     color: var(--pink); letter-spacing: 0.1em;
@@ -817,7 +821,9 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
 .service-card__price {
     font-family: var(--font-display); font-weight: 900; font-size: 22px;
     color: var(--pink); margin-bottom: 16px;
-    line-height: 1.25;
+    /* строка под подпись зарезервирована везде, иначе сумма
+       с «за проект» встаёт выше соседних */
+    line-height: 1.6; min-height: 3.2em;
 }
 .service-card__price span { font-size: 11px; font-weight: 400; color: var(--text-muted); white-space: nowrap; }
 .wip-note {
