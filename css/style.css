@@ -444,6 +444,7 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     font-weight: 500; margin-bottom: 28px;
 }
 .consult__meta svg { color: var(--pink); }
+.consult__actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .consult__visual {
     border-radius: var(--radius-lg);
     overflow: hidden;
