@@ -358,6 +358,20 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     max-width: 800px;
     padding: 120px 32px 80px;
 }
+/* Бейдж поверх фотографии: заливка вместо прозрачной подложки,
+   иначе розовый текст теряется на тёмном фоне */
+.hero .badge {
+    background: var(--pink);
+    border: 2px solid rgba(255,255,255,0.95);
+    color: #FFFFFF;
+    font-size: 14px; font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 10px 22px;
+    /* тёмный ореол отделяет плашку от светлых участков фотографии */
+    box-shadow: 0 0 0 5px rgba(10,10,10,0.55), 0 8px 30px rgba(255,0,128,0.55);
+}
+.hero .badge__dot { background: #FFFFFF; }
+
 .hero__title {
     font-weight: 900;
     font-size: clamp(36px, 6vw, 64px);
