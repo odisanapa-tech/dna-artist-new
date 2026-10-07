@@ -752,7 +752,7 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
 .cta__sub { font-size: 15px; color: var(--text-muted); margin: 0 0 32px; }
 
 /* ═══════ SPECIALIST HERO ═══════ */
-.spec-hero { padding: 100px 0 64px; }
+.spec-hero { padding: 100px 0 40px; }
 .spec-hero__grid {
     display: grid; grid-template-columns: auto 1fr;
     gap: 48px; align-items: center;
