@@ -225,7 +225,7 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
 .eyebrow--lg + .services-grid { margin-top: 22px; }
 
 .section__title {
-    font-weight: 900; font-size: clamp(26px, 4vw, 36px);
+    font-weight: 900; font-size: clamp(30px, 4vw, 44px);
     line-height: 1.1; margin: 0 0 40px;
     letter-spacing: -0.02em; color: var(--text);
 }
@@ -454,28 +454,27 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
 
 /* ═══════ ПОДХОД СПЕЦИАЛИСТА ═══════ */
 .approach {
-    max-width: 760px;
-    display: flex; flex-direction: column; gap: 18px;
+    display: flex; flex-direction: column; gap: 20px;
 }
 .approach p {
-    font-size: 16px; line-height: 1.75;
+    font-size: clamp(17px, 1.3vw, 20px);
+    line-height: 1.7;
     color: rgba(255,255,255,0.78);
 }
 .approach p.approach__lead {
-    font-size: 18px;
+    font-size: clamp(19px, 1.5vw, 23px);
     color: var(--text);
     font-weight: 500;
 }
 .approach__quote {
     position: relative;
-    max-width: 760px;
     margin-top: 36px;
-    padding: 28px 32px 28px 64px;
+    padding: 32px 36px 32px 76px;
     background: var(--pink-bg);
     border: 1px solid var(--pink-border);
     border-radius: var(--radius-lg);
     font-family: var(--font-display);
-    font-size: clamp(17px, 2vw, 21px);
+    font-size: clamp(19px, 1.9vw, 26px);
     font-weight: 500; line-height: 1.45;
     color: var(--text);
 }
