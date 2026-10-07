@@ -786,6 +786,8 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
 /* ═══════ SERVICES GRID ═══════ */
 /* auto-fit, чтобы работало и на три карточки, и на четыре */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; }
+/* для пяти карточек: три в ряд, иначе текст и кнопки не влезают */
+.services-grid--3col { grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); }
 .service-card {
     background: var(--bg-card); border: 1px solid var(--line);
     border-radius: var(--radius); padding: 24px;
