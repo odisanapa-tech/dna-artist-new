@@ -526,6 +526,22 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     transform: scale(1.05);
 }
 .product-card__body { padding: 24px; }
+/* карточка на всю ширину ряда: картинка слева, текст справа —
+   иначе длинное описание не вмещается, а карточка остаётся одна в строке */
+.product-card--wide {
+    grid-column: 1 / -1;
+    display: grid; grid-template-columns: 1fr 1.2fr;
+    cursor: default;
+}
+.product-card--wide:hover { transform: none; box-shadow: none; border-color: var(--line); }
+.product-card--wide .product-card__img { aspect-ratio: auto; height: 100%; }
+.product-card--wide .product-card__body {
+    padding: 36px; display: flex; flex-direction: column;
+    justify-content: center; gap: 4px;
+}
+.product-card--wide .product-card__name { font-size: clamp(26px, 2.6vw, 36px); margin-bottom: 12px; }
+.product-card--wide .product-card__desc:last-of-type { margin-bottom: 24px; }
+.product-card--wide .btn { align-self: flex-start; }
 .product-card__tag {
     display: block; font-size: 12px; color: var(--pink);
     letter-spacing: 0.1em; text-transform: uppercase;
@@ -1162,4 +1178,12 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     .header__logo { font-size: 16px; padding-right: 10px; }
     .header__notch { padding: 0 4px 0 12px; }
     .header__cta { font-size: 12px; padding: 9px 12px; }
+}
+
+/* широкая карточка на узких экранах — в одну колонку */
+@media (max-width: 860px) {
+    .product-card--wide { grid-template-columns: 1fr; }
+    .product-card--wide .product-card__img { aspect-ratio: 16/10; height: auto; }
+    .product-card--wide .product-card__body { padding: 24px; }
+    .product-card--wide .product-card__name { font-size: 28px; }
 }
