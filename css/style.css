@@ -305,7 +305,7 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     border-color: var(--white-line-strong);
 }
 .section--white .stats__label {
-    color: var(--white-text-muted);
+    color: rgba(10,10,10,0.72);
 }
 .section--white .product-card__tag {
     color: var(--white-text-muted);
@@ -426,7 +426,11 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     font-weight: 900; color: var(--pink);
     line-height: 1; margin-bottom: 10px;
 }
-.stats__label { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+.stats__label {
+    font-size: clamp(16px, 1.3vw, 19px);
+    color: rgba(255,255,255,0.78);
+    line-height: 1.5;
+}
 
 /* ═══════ CONSULTATION ═══════ */
 .consult {
