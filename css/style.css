@@ -584,6 +584,20 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
 .product-card:hover .product-card__link { gap: 10px; }
 .product-card__link svg { color: var(--pink); }
 
+/* ═══════ МЭРИКОИН ═══════ */
+.coin-intro {
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 48px; align-items: center;
+}
+.coin-intro__img {
+    width: clamp(200px, 22vw, 280px); height: auto;
+    /* у картинки свой чёрный фон — оформляем её плиткой,
+       чтобы край читался как рамка, а не как заплатка */
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--pink-border);
+    box-shadow: 0 12px 40px rgba(255,0,128,0.14);
+}
+
 /* ═══════ НОМИНАЛЫ МЭРИКОИНОВ ═══════ */
 .coins {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
@@ -1229,4 +1243,20 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     .product-card--wide .product-card__img { aspect-ratio: 16/10; height: auto; }
     .product-card--wide .product-card__body { padding: 24px; }
     .product-card--wide .product-card__name { font-size: 28px; }
+}
+
+/* монета уходит под текст, когда колонки становятся тесными */
+@media (max-width: 860px) {
+    .coin-intro { grid-template-columns: 1fr; gap: 28px; justify-items: center; }
+    .coin-intro__img { width: 220px; }
+}
+
+/* цитата на узких экранах: отбивка под кавычку слева съедала
+   половину ширины, поэтому кавычка уходит на строку выше */
+@media (max-width: 600px) {
+    .approach__quote { padding: 24px 22px; }
+    .approach__quote::before {
+        position: static; display: block;
+        font-size: 40px; line-height: 0.8; margin-bottom: 10px;
+    }
 }
