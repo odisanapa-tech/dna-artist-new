@@ -371,7 +371,7 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     position: relative; z-index: 2;
     text-align: center;
     max-width: 800px;
-    padding: 120px 32px 80px;
+    padding: 120px 32px 40px;
 }
 /* Бейдж поверх фотографии: заливка вместо прозрачной подложки,
    иначе розовый текст теряется на тёмном фоне */
