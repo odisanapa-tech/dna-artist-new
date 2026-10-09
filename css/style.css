@@ -743,16 +743,16 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
 }
 .author-card:hover .author-card__img img { transform: scale(1.05); }
 
-.author-card__content { padding: 24px; }
+.author-card__content { padding: 28px; }
 .author-card__label {
-    display: inline-block; font-size: 12px;
+    display: inline-block; font-size: 15px;
     font-family: var(--font-mono);
     color: var(--pink); background: var(--pink-bg);
-    border-radius: 100px; padding: 4px 12px;
-    margin-bottom: 12px; letter-spacing: 0.05em;
+    border-radius: 100px; padding: 7px 16px;
+    margin-bottom: 16px; letter-spacing: 0.05em;
 }
-.author-card__name { font-weight: 700; font-size: 20px; margin-bottom: 6px; }
-.author-card__role { font-size: 16px; color: var(--text-muted); line-height: 1.4; margin-bottom: 16px; }
+.author-card__name { font-weight: 700; font-size: clamp(24px, 2.2vw, 30px); margin-bottom: 10px; }
+.author-card__role { font-size: clamp(17px, 1.5vw, 20px); color: rgba(255,255,255,0.78); line-height: 1.4; margin-bottom: 20px; }
 .author-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
 .author-card__tags span {
     font-size: 13px; color: var(--text-muted);
@@ -760,11 +760,13 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
     border-radius: 100px; padding: 5px 12px;
 }
 .author-card__link {
-    display: inline-flex; align-items: center; gap: 6px;
+    /* на узких экранах подпись переносится — стрелку держим
+       у первой строки, иначе она уезжает в сторону */
+    display: inline-flex; align-items: flex-start; gap: 6px;
     font-family: var(--font-display);
-    font-size: 13px; color: var(--pink); font-weight: 700;
+    font-size: 16px; color: var(--pink); font-weight: 700;
 }
-.author-card__link svg { color: var(--pink); }
+.author-card__link svg { color: var(--pink); flex-shrink: 0; margin-top: 4px; }
 
 /* ═══════ CTA BLOCK ═══════ */
 .cta {
