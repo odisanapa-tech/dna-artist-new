@@ -584,6 +584,23 @@ h1,h2,h3,h4 { font-family: var(--font-display); }
 .product-card:hover .product-card__link { gap: 10px; }
 .product-card__link svg { color: var(--pink); }
 
+/* ═══════ НОМИНАЛЫ МЭРИКОИНОВ ═══════ */
+.coins {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+    gap: 16px; margin-top: 28px;
+}
+.coin-card {
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 28px;
+}
+.coin-card__value {
+    display: block;
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(30px, 3vw, 40px);
+    color: var(--pink); line-height: 1; margin-bottom: 10px;
+}
+.coin-card__label { font-size: 16px; color: rgba(255,255,255,0.78); line-height: 1.4; }
+
 /* ═══════ BANNER IMAGE ═══════ */
 .banner-img {
     position: relative;
